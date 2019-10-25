@@ -153,3 +153,42 @@ section {
   letter-spacing: 2px;
  }
 
+/*  >>>>>>>>>>>>>>>>>>>>> STYLE FOR chessBoard  <<<<<<<<<<<<<<<<<<<<<<<<<<< */
+#chessBoard {
+  width: 320px;
+  height: 320px;
+  /* если на чистой странице делать, это не обязательно */
+  box-sizing: content-box;
+  border: 1px solid black;
+}
+
+#chessBoard::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.chess-block {
+  width: 40px;
+  height: 40px;
+  float: left;
+}
+
+.bg-black {
+  background: #525252;
+}
+
+.active {
+  /* background-image: url('./images/iconfinder_black_knight_754824.png'); */
+  background-image: url('https://cdn2.iconfinder.com/data/icons/essentials-volume-3/128/chess-piece-512.png');
+  background-image: url('https://cdn1.iconfinder.com/data/icons/basic-ui-element-2-2-line/512/Basic_UI_Elements_-_2.1_-_line-48-512.png');
+  background-image: url('https://cdn0.iconfinder.com/data/icons/startup-17/32/startup-07-512.png');
+  background-image: url('https://cdn1.iconfinder.com/data/icons/finance-set-1-4/74/3-512.png');
+  background-image: url('https://cdn4.iconfinder.com/data/icons/web-seo-line-vol-7/150/planning__strategy__chess__piece-512.png');
+  background-color: tomato;
+  background-size: contain;
+}
+
+.green {
+  background: green;
+}

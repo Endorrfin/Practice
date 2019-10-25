@@ -95,12 +95,101 @@ if (count != 0) {
 
 /**
 |--------------------------------------------------
-| ======= <<<--- TASK #3 -  --->>>  =======
+| ======= <<<--- TASK #3 - Конем ходи --->>>  =======
+Написать с помощью javaScript решение, которое бы визуализировало ходы конем на шахматной доске
 |--------------------------------------------------
 */
-/*
 
-*/
+// Создаем двумерный массив, который характеризует модель шахматной доски
+let chess = [
+  [0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0],
+]
+
+// Отрисуем массив
+function draw() {
+  let out = '';
+  let m = 0; // счетчик
+  // создание 1-го цикла, который рисует горизонтальные строки
+  for(let i = 0; i < chess.length; i++) {
+    // создание 2-го цикла, который будет рисовать внутри строки ячейки
+    let arr = chess[i]; // arr = каждая строка для упрощения визуального восприятия.
+    for(let j = 0; j < arr.length; j++){
+      // отрисуем кубики шахматной доски белый / серый
+      if (m % 2 == 0) {
+        // создание блока + добавление дата-атрибутов data-x="${j}" data-y="${i}" для маркировки ячеек на шахматной доске, чтоб их идентифицировать
+        out+= `<div class="chess-block" data-x="${j}" data-y="${i}"></div>`;
+      } else {
+        out+= `<div class="chess-block bg-black" data-x="${j}" data-y="${i}"></div>`;
+      }
+      m++ // необходимо делать после каждой итерации
+    }
+    m++ // после итерации 1-й строки тоже увеличиваем m на единицу
+  }
+  // вывод блока на страницу
+  document.querySelector('#chessBoard').innerHTML = out;
+  document.querySelectorAll('.chess-block').forEach(function(element) {
+    element.onclick = horse;
+  });
+}
+
+// запуск отрисовки функцией
+draw();
+
+
+function horse() {
+  // Реализация зачистки поля после клика
+  document.querySelectorAll('.chess-block').forEach(function(element) {
+    element.classList.remove('green');
+    element.classList.remove('active');
+  })
+
+
+  let x = this.dataset.x;
+  let y = this.dataset.y;
+  // проверяем позволяет ли функция получать координаты ячеек x & y
+  console.log(x + ' ' + y);
+
+  // подсветка ячейки по которой кликнет пользователь
+  this.classList.add('green');
+
+  // Прописываем правила для проверки возможных ходов
+  // Атрибут data - это всегда строка, поэтому добавляем "+" перед всеми x & y для преобразования результата string в number
+  if(+x + 2 < 8 && +y + 1 < 8) {
+    document.querySelector(`.chess-block[data-x="${+x + 2}"][data-y="${+y + 1}"]`).classList.add('active'); 
+  }
+  if(+x + 2 < 8 && +y - 1 >=0) {
+    document.querySelector(`.chess-block[data-x="${+x + 2}"][data-y="${+y - 1}"]`).classList.add('active');
+  }
+  if(+x - 2 >=0 && +y + 1 < 8) {
+    document.querySelector(`.chess-block[data-x="${+x - 2}"][data-y="${+y + 1}"]`).classList.add('active'); 
+  }
+  if(+x - 2 >=0 && +y - 1 >=0) {
+    document.querySelector(`.chess-block[data-x="${+x - 2}"][data-y="${+y - 1}"]`).classList.add('active');
+  }
+  if(+x + 1 < 8 && +y - 2 >=0) {
+    document.querySelector(`.chess-block[data-x="${+x + 1}"][data-y="${+y - 2}"]`).classList.add('active'); 
+  }
+  if(+x - 1 >=0 && +y - 2 >=0) {
+    document.querySelector(`.chess-block[data-x="${+x - 1}"][data-y="${+y - 2}"]`).classList.add('active');
+  }
+  if(+x + 1 < 8 && +y + 2 < 8) {
+    document.querySelector(`.chess-block[data-x="${+x + 1}"][data-y="${+y + 2}"]`).classList.add('active'); 
+  }
+  if(+x - 1 >=0 && +y + 2 < 8) {
+    document.querySelector(`.chess-block[data-x="${+x - 1}"][data-y="${+y + 2}"]`).classList.add('active');
+  }
+}
+
+
+
+
 
 
 /**
