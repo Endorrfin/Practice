@@ -185,10 +185,10 @@ section {
   background-image: url('https://cdn0.iconfinder.com/data/icons/startup-17/32/startup-07-512.png');
   background-image: url('https://cdn1.iconfinder.com/data/icons/finance-set-1-4/74/3-512.png');
   background-image: url('https://cdn4.iconfinder.com/data/icons/web-seo-line-vol-7/150/planning__strategy__chess__piece-512.png');
-  background-color: tomato;
+  background-color: rgb(195, 195, 195);
   background-size: contain;
 }
 
 .green {
-  background: green;
+  background: #fffb00;
 }

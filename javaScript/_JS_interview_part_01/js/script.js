@@ -96,7 +96,7 @@ if (count != 0) {
 /**
 |--------------------------------------------------
 | ======= <<<--- TASK #3 - Конем ходи --->>>  =======
-Написать с помощью javaScript решение, которое бы визуализировало ходы конем на шахматной доске
+Написать с помощью javaScript код, который будет визуализировать все возможные ходы конем на шахматной доске!
 |--------------------------------------------------
 */
 
@@ -187,6 +187,21 @@ function horse() {
   }
 }
 
+
+// ---------------- OPTION II ----------------
+// function horse(){
+//   const horseMove = [[1,2],[-1,2],[1,-2],[-1,-2],[2,1],[2,-1],[-2,1],[-2,-1]]
+//   let thisCoord = [parseInt(this.dataset.x), parseInt(this.dataset.y)]
+//   const moves = horseMove.filter(value => {
+//      if (  thisCoord[0] + value[0] >= 0  && thisCoord[0] + value[0] < 8 &&
+//         thisCoord[1] + value[1] >= 0  && thisCoord[1] + value[1] < 8) {
+//         return value
+//      }   
+//   })
+//   moves.forEach(value => {
+//      document.querySelector(`[data-x="${thisCoord[0] + value[0]}"][data-y="${thisCoord[1] + value[1]}"]`).classList.toggle('horse')
+//   })
+// }
 
 
 
