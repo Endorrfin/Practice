@@ -75,20 +75,33 @@
 
                     <section>
                         <div class="section-header">
-                            <h4 class="section-title">Task 04 - </h4>
+                            <h4 class="section-title">Task 04 - function (genitive = (n, word)) </h4>
                         </div>
                         <p class="description"><b><u>Условие задачи:</u></b>
-
+                            const autoTags = getAutoTags();
+                            console.log( autoTags(‘интересно изучать js’, [‘html’,’js’]) );
+                            
+                            Реализуйте функцию genitive(n, word). Функция принимает положительное целое число и объект word с вариантами записи слов для разных чисел. Объект word имеет свойства singular many1 many2, например {singular: ‘товар’, many1: ‘товара’, many2: ‘товаров’.
+                            Например, при вызове
+                            
+                            genitive(5, {singular: ‘курс’б many1: ‘курса’, many2: ‘курсов’})
+                            функция должна вернуть строку ‘5 курсов’
                         </p>
 
                     </section>
 
                     <section>
                         <div class="section-header">
-                            <h4 class="section-title">Task 05 - </h4>
+                            <h4 class="section-title">Task 05 - object classNames </h4>
                         </div>
                         <p class="description"><b><u>Условие задачи:</u></b>
-
+                            Создайте объекта classNames co свойством cname и методами 
+                            add( String [,String]) Добавляет к cname классы
+                            remove( String [,String]) Удаляет из cname классы
+                            toggle ( String [, Boolean]) Если класс у элемента отсутствует - добавляет, иначе - убирает. Когда вторым параметром передано false - удаляет указанный классб а если true - добавляет.
+                            
+                            Например, значение classNames.cname = ‘btn’. После вызова classNames.toggle(‘btn-primary’) значение classNames.cname должно стать ‘btn btn-primary’. При повторном вызове classNames.toggle(‘btn-primary’), значение длолжно вернуться в ‘btn’
+                            ПримечаниеЖ это пригодится в дальнейшем при работе с DOM на HTML-странице. Познакомьтесь с интерфейсом https://developer.mozilla.org/ru/docs/Web/API/Element/classList
                         </p>
 
                     </section>
