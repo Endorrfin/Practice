@@ -174,25 +174,38 @@ const classNames = {
 
 /**
 |--------------------------------------------------
-  ======= <<<--- Topic #6 -  --->>>  =======
+  ======= <<<--- Topic #6 - function lorem --->>>  =======
+Напишите функцию lorem(n), которая принимает положительное целое n (от 1 до 445) и при вызове возвращает строку длинной n символов из строки.
 
-  
+“Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi eveniet neque quasi placeat aliquam, hic voluptas magnam. Similique recusandae libero reprehenderit deleniti voluptas blanditiis, ipsa eaque ratione repellendus deserunt placeat, illum perspiciatis nulla? Molestiae eum similique molestias nam ut officiis provident beatae cumque. Ad, laboriosam iste. Dicta odio consectetur vitae autem voluptatibus architecto, repellendus reiciendis accusamus sit iusto excepturi dolore quaerat aliquam debitis molestiae modi a voluptate officia delectus ex, numquam neque laborum? Perspiciatis repellat sequi eligendi fugiat velit illo minus voluptates excepturi, praesentium libero aut corrupti odio aliquam dolorum in nulla eveniet odit est esse? Vero minus explicabo labore.”
+
+Например, при вызове lorem(100) функция должна вернуть строку
+“Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi eveniet neque quasi placeat aliquam, hic”
 |--------------------------------------------------
 */
 
+const lorem = n => "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi eveniet neque quasi placeat aliquam, hic voluptas magnam. Similique recusandae libero reprehenderit deleniti voluptas blanditiis, ipsa eaque ratione repellendus deserunt placeat, illum perspiciatis nulla? Molestiae eum similique molestias nam ut officiis provident beatae cumque. Ad, laboriosam iste. Dicta odio consectetur vitae autem voluptatibus architecto, repellendus reiciendis accusamus sit iusto excepturi dolore quaerat aliquam debitis molestiae modi a voluptate officia delectus ex, numquam neque laborum? Perspiciatis repellat sequi eligendi fugiat velit illo minus voluptates excepturi, praesentium libero aut corrupti odio aliquam dolorum in nulla eveniet odit est esse? Vero minus explicabo labore.".slice(0,n);
+
+// на выходе мы будем получать результат похож на тот, который выдает emmet в html
+console.log(lorem,(100)); // n => "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi eveniet neque quasi placeat aliquam, hic voluptas magnam. Similique recusandae libero reprehenderit deleniti voluptas blanditiis,… 100
 
 
 
 
 /**
 |--------------------------------------------------
-  ======= <<<--- Topic #7 -   --->>>  =======
+  ======= <<<--- Topic #7 - function myReplace  --->>>  =======
+Напишите функцию myReplace(s1, s2, s3), которая будет принимать три строковых аргумента s1 , s2, s3 и заменять в первом аргументе s1 все слова, совпадающие со вторым аргументом s2, на третий аргумент s3. Функция должна возвращать измененную строку. Например, вызов 
+myReplace(“Ехал Грека, через реку”, “р”, “л”)
 
-  
+должен вернуть строку “Ехал Глека, челез леку”
+
+Примечание: эта задача является частным случаем одной из предыдущих задач. Она более простая, позволяет отдохнуть и приступить к следующим задачам. Внимание, функция должна учитывать регистр слов.
 |--------------------------------------------------
 */
 
-
+const myReplace = (s, k, m) => s.split(k).join(m);
+console.log(myReplace("Ехал Грека через реку", "р", "л" )); // Ехал Глека челез леку
 
 
 /**
