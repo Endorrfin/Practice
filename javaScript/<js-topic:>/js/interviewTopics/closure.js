@@ -91,6 +91,59 @@
 
 
 
+// ======= <<<--- Closure (замыкание) --->>>  =======
+
+// {
+//   function makeCounter () {
+//     var currentCount = 1;
+
+//     return function () {
+//       return currentCount++;
+//     };
+//   }
+
+//   var counter = makeCounter();
+
+//   // каждый вызов увеличивает счетчик и возвращает результат
+//   console.log( counter()); // 1
+//   console.log( counter()); // 2
+//   console.log( counter()); // 3
+//   console.log( counter()); // 4
+//   console.log( counter()); // 5
+// }
+
+
+
+// ======= <<<--- Closure (замыкание) example II --->>>  =======
+
+//   function counter() {
+//     let count = 0;
+
+//     return function() {
+//       const nexValue = count + 1;
+//       count = nexValue;
+//       return nexValue;
+//     }
+//   }
+
+//   var b = counter();
+//   var c = counter();
+  
+//   // каждый вызов увеличивает счетчик на 1, b и c живут своей жизнью и не пересекаются
+// console.log(b()); // 1
+// console.log(b()); // 2
+// console.log(b()); // 3
+// console.log(b()); // 4
+
+// console.log(c()); // 1
+// console.log(c()); // 2
+// console.log(c()); // 3
+
+// console.log(b()); // 5
+// console.log(c()); // 4
+
+
+
 
 
 
