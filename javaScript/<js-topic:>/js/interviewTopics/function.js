@@ -243,3 +243,79 @@
 //   }
 // }
 // console.log( greet({ name: 'amy' }) )
+
+
+
+
+
+
+
+
+
+  // // === <<<--- Параметры функции по умолчанию до ES6 --->>>  === 
+
+  // function doSomething (name, age) {
+  //   name = typeof name !== 'undefined' ? name : "";
+  //   age = typeof age !== 'undefined' ? age : 0;
+  // }
+
+  // console.log(doSomething('Rik', 34));
+
+
+
+
+
+    // // === <<<--- Параметры функции по умолчанию в ES6 --->>>  === 
+
+  // function doSomething (name = "Kir", age = 94) {
+  // }
+
+
+
+
+    // === <<<--- Деструктуризация в ES6 --->>>  === 
+
+  // var employee = {
+  //   id: 37,
+  //   name: "Hanna",
+  //   position: "Project manager",
+  //   salary: 1000
+  // };
+
+
+  // // old approach
+  // function promote (emp) {
+  //   var name = emp.name;
+  //   var position = emp.position;
+  //   var salary = emp.salary;
+  // }
+  // console.log(promote(employee));
+
+
+    // // new approach
+    // function promote ({name, position, salary}) {
+    // }
+
+    // console.log(promote(employee));
+
+
+
+
+
+
+    // // === <<<--- rest operator в ES6 --->>>  === 
+    /* 
+    Оператор "..." в JS имеет два похожих но разных применения:
+      1) При вызове функции он позволяет передать несколько параметров в виде массива (и тогда он называется spread)
+      2) При объявлении функции он позволяет принять несколько отдельных параметров в массив (и тогда называется rest)
+    */
+    // function musketeers (leader, priest, ... others) {
+    //   for (var i = 0; i < arguments.length; i++) {
+    //     console.log(i);
+    //   }
+
+    //   others.forEach(function(currentValue, index, array) {
+
+    //   });
+    // }
+    // musketeers("д`Артаньян", "Аранис", "Атос", "Портос");

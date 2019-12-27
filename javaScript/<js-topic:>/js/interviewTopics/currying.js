@@ -93,27 +93,27 @@
 
 // // === <<<--- Option IV --->>>  ===
 // на практике можно увидеть применения каррирования на месте, без записи в переменные
-function getBrickVolume(width) {
+// function getBrickVolume(width) {
   
-  function getBrickVolumeWithWidth (length) {
+//   function getBrickVolumeWithWidth (length) {
 
-    function getBrickVolumeWithWidthAndLength (height) {
-      return width * length * height;
-    }
-    return getBrickVolumeWithWidthAndLength
-  }
-  return getBrickVolumeWithWidth
-}
+//     function getBrickVolumeWithWidthAndLength (height) {
+//       return width * length * height;
+//     }
+//     return getBrickVolumeWithWidthAndLength
+//   }
+//   return getBrickVolumeWithWidth
+// }
 
-/* 
-Такая замысловатая структура вложенных функций позволяет нам устанавливать неизменные габариты нашего кирпича без использования метода bind
-*/
+// /* 
+// Такая замысловатая структура вложенных функций позволяет нам устанавливать неизменные габариты нашего кирпича без использования метода bind
+// */
 
-var brickVolumeWithWidthAndLength = getBrickVolume (10)(20);
+// var brickVolumeWithWidthAndLength = getBrickVolume (10)(20);
 
-var volume1 = brickVolumeWithWidthAndLength (8);
-console.log(volume1); // 1600
-var volume2 = brickVolumeWithWidthAndLength (12);
-console.log(volume2); // 2400
-var volume3 = brickVolumeWithWidthAndLength (15);
-console.log(volume3); // 3000
+// var volume1 = brickVolumeWithWidthAndLength (8);
+// console.log(volume1); // 1600
+// var volume2 = brickVolumeWithWidthAndLength (12);
+// console.log(volume2); // 2400
+// var volume3 = brickVolumeWithWidthAndLength (15);
+// console.log(volume3); // 3000
