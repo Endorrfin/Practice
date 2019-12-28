@@ -93,6 +93,8 @@ reduce - чтоб найти максимальное число в массив
 */
 
 // const arr = ['1', '3', '2', '4', '9', '5', '7', '10', '18'];
+
+// // OPTION I - ES-6
 // const res = arr
 //       .map((el) => parseInt(el))
 //       .filter((number) => number % 2)
@@ -101,6 +103,20 @@ reduce - чтоб найти максимальное число в массив
 // console.log(res);
 
 
+// // OPTION II - ES-5
+// const res2 = arr
+//       .map(function(el) {
+//         return parseInt(el);
+//       })
+//       .filter(function(number) {
+//         return number % 2;
+//       })
+//       .reduce(function(max, value) {
+//         return Math.max(max, value)
+//       }, 0);
+
+
+// console.log(res2);
 
 
 /**
