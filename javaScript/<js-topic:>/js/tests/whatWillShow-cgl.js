@@ -108,3 +108,23 @@
 // }
 
 // console.log(count)
+
+
+
+
+/**
+ * What will show console.log?
+ */
+
+//  for(var i = 0; i < 3; i++) {
+//    setTimeout(function () {
+//      console.log(i); // 3
+//    }, i * 1000);
+//  }
+
+
+//  for(let i = 0; i < 3; i++) {
+//   setTimeout(function () {
+//     console.log(i); // 0, 1, 2
+//   }, i * 1000);
+// }
