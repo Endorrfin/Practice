@@ -146,6 +146,87 @@
 
 
 
+/**
+|--------------------------------------------------
+  === <<<---  CLOSURE --->>>  ===
+|--------------------------------------------------
+*/
 
+// function checkCred () {
+//   const login = 'test';
+//   const password = 'somePassword';
+
+//   return {
+//     checkLogin (value) {
+//       return login === value;
+//     },
+
+//     checkPassoword (value) {
+//       return password === value;
+//     },
+//   };
+// }
+
+// const check = checkCred();
+
+// console.log(check); // {checkLogin: ƒ, checkPassoword: ƒ}
+// console.log(check.checkLogin('admin')); // fasle
+// console.log(check.checkLogin('test')); // fasle
+
+// console.log(check.checkPassoword('qwerty')); // false
+// console.log(check.checkPassoword('somePassword')); // true
+
+
+
+
+/**
+|--------------------------------------------------
+  === <<<---  CLOSURE --->>>  ===
+|--------------------------------------------------
+*/
+
+// // EXAMPLE with let
+
+// function closureLet () {
+//   const arrOfFunction = [];
+//   let value = '';
+
+//   for (let i = 0; i < 10; i++) {
+//     value += i;
+//     arrOfFunction.push(function() {
+//       console.log(value, i); // closure
+//     });
+//   }
+//   // console.log(arrOfFunction); // (10) [ƒ, ƒ, ƒ, ƒ, ƒ, ƒ, ƒ, ƒ, ƒ, ƒ]
+//   return arrOfFunction;
+// }
+
+// const resLet = closureLet();
+// resLet[0](); // 0123456789 0
+// resLet[5](); // 0123456789 5
+// resLet[9](); // 0123456789 9
+
+
+
+// // EXAMPLE with var
+
+// function closureVar () {
+//   const arrOfFunction = [];
+//   let value = '';
+
+//   for (var i = 0; i < 10; i++) {
+//     value += i;
+//     arrOfFunction.push(function() {
+//       console.log(value, i); // closure
+//     });
+//   }
+//   // console.log(arrOfFunction); // (10) [ƒ, ƒ, ƒ, ƒ, ƒ, ƒ, ƒ, ƒ, ƒ, ƒ]
+//   return arrOfFunction;
+// }
+
+// const resVar = closureVar();
+// resVar[0](); // 0123456789 10
+// resVar[5](); // 0123456789 10
+// resVar[9](); // 0123456789 10
 
 

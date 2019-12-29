@@ -122,10 +122,28 @@ reduce - чтоб найти максимальное число в массив
 /**
 |--------------------------------------------------
   === <<<---  TASK #6 --->>>  ===
+Найти максимальное число в массиве / массивах?
 
+Проще всего это сделать используя spread operator
 |--------------------------------------------------
 */
 
+// const arr1 = [2, 5, 7, 22];
+// const arr2 = [5, 10, 15, 33];
+// const arr3 = [7, 14, 21, 43];
+// const arr4 = [53, 11, 24, 19];
+
+// const res1 = Math.max(...arr1);
+// const res2 = Math.max(...arr1, ...arr2);
+// const res3 = Math.max(...arr1, ...arr2, ...arr3);
+// const res4 = Math.max(...arr1, ...arr2, ...arr3, ...arr4);
+// const res5 = Math.max(44, ...arr1, 55, ...arr2, 66, ...arr3, 77, ...arr4, 88);
+
+// console.log(res1); // 2
+// console.log(res2); // 33
+// console.log(res3); // 43
+// console.log(res4); // 53
+// console.log(res5); // 88
 
 
 /**
