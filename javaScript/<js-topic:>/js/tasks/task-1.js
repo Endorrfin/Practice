@@ -262,37 +262,95 @@ changeCollection([1,2,3], [‘a’, ’b’, ‘c’]) → [ [2,3], [‘b’, �
 |--------------------------------------------------
 */
 
-function changeCollection () {
-  // console.log(arguments);
-  let result = [];
+// function changeCollection () {
+//   // console.log(arguments);
+//   let result = [];
 
-  for (let i = 0; i < arguments.length; i++) {
-    arguments[i].shift();
-    console.log(arguments[i]);
-    result.push(arguments[i]);
-    // result.push(arguments[i]);
-  }
-  console.log(result);
-}
+//   for (let i = 0; i < arguments.length; i++) {
+//     arguments[i].shift();
+//     console.log(arguments[i]);
+//     result.push(arguments[i]);
+//     // result.push(arguments[i]);
+//   }
+//   console.log(result);
+// }
 
-changeCollection([2, 3, 4], [5, 77, 21], [9, 5]);
+// changeCollection([2, 3, 4], [5, 77, 21], [9, 5]);
 
 
 /**
 |--------------------------------------------------
   === <<<---  TASK #12 --->>>  ===
+Создать две функции и дать им осмысленные названия:
+- первая функция принимает массив и колбэк (одна для всех вызовов)
+- вторая функция (колбэк) обрабатывает каждый элемент массива (для каждого вызова свой callback)
+
+Первая функция возвращает строку “New value: ” и результат обработки:
+
+firstFunc([‘my’, ‘name’, ‘is’, ‘Trinity’], handler1) → “New value: MyNameIsTrinity”
+firstFunc([10, 20, 30], handler2) → “New value: 100, 200, 300,”
+firstFunc([{age: 45, name: ‘Jhon’}, {age: 20, name: ‘Aaron’}], handler3) →
+“New value: Jhon is 45, Aaron is 20,”
+firstFunc([‘abc’, ‘123’], handler4) → “New value: cba, 321,” // строки инвертируются
+
+
+Подсказка: secondFunc должна быть представлена функцией, которая принимает
+один аргумент (каждый элемент массива) и возвращает результат его обработки
 
 |--------------------------------------------------
 */
 
+// function firstFunc (arr, handler) {
+//   let res = "NEW VALUE: ";
+//   for (let i = 0; i < arr.length; i++) {
+//     res += handler(arr[i]);
+//   }
+
+//   return res;
+// }
+
+// const res1 = firstFunc(['hello', 'world', 'i', 'like', 'a', 'javascript'], function(item) {
+//   return item[0].toUpperCase() + item.slice(1) + " ";
+// });
+// console.log(res1);
+
+
+// const res2 = firstFunc([10, 20, 30, 40, 50], function(item) {
+//   return item * 10 + " ";
+// });
+// console.log(res2);
 
 
 /**
 |--------------------------------------------------
   === <<<---  TASK #13 --->>>  ===
-
+Написать аналог метода every. 
+Создайте функцию every, она должна принимать первым аргументом массив чисел (обязательно проверьте что передан массив) вторым аргументом callback (обязательно проверьте что передана функция) функция должна возвращать true или false в зависимости от результата вызова callback (проверить число больше 5). 
+Callback  должен принимать один элемент массива, его индекс в массиве и весь массив.
 |--------------------------------------------------
 */
+
+// // Как работает метод every?
+// const isAllNumbers = [2, 4, 8, 16, 24].every(function(num) {
+//   return typeof num === 'number';
+// });
+// console.log(isAllNumbers); // true
+
+// function everyFunc (arr, handler) {
+//   for (let i = 0; i < arr.length; i++) {
+//     if(!handler(arr[i])) { // переводим fasle в true
+//       return false;
+//     }
+//   }
+
+//   return true;
+// }
+
+// const checkIsNum = everyFunc([2, 4, 8, 16, 24], function(num) {
+//   return typeof num === 'number';
+// });
+
+// console.log(checkIsNum); // true
 
 
 /**

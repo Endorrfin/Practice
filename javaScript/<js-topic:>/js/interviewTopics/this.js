@@ -127,3 +127,122 @@
 
 // promote.call(employee1, "Department head", 500);
 // promote.call(employee2, "Middle developer", 300);
+
+
+
+/**
+|--------------------------------------------------
+  === <<<---  TASK - THIS --->>>  ===
+#1
+Создать объект с розничной ценой и количеством продуктов. 
+Этот объект должен содержать метод для получения общей стоимости всех товаров (цена * количество продуктов)
+
+#2
+Создать объект из предыдущей задачи. 
+Создать второй объект, который описывает количество деталей и цену за одну деталь.
+Для второго объекта нужно узнать общую стоимость всех деталей, но нельзя создавать новые функции и методы. 
+Для этого “позаимствуйте” метод из предыдущего объекта.
+
+|--------------------------------------------------
+*/
+
+// // #1
+// let product1 = {
+//   price: 40,
+//   counts: 20,
+//   getTotalPrice() {
+//     return this.price * this.counts;
+//   },
+// };
+
+// console.log(product1.getTotalPrice()); // 800
+
+
+// // #2
+// let product2 = {
+//   price: 100,
+//   counts: 12,
+// };
+
+// const totalPriceProduct2 = product1.getTotalPrice.call(product2);
+// console.log(totalPriceProduct2); // 1200
+
+// console.log(product1.getTotalPrice.apply(product2));
+
+
+/**
+|--------------------------------------------------
+  === <<<---  TASK  --->>>  ===
+Даны объект и функция:
+let sizes = {width: 5, height: 10},
+getSquare = function () {return this.width * this.height};
+Не изменяя функцию или объект, получить результат функции
+getSquare для объекта sizes
+
+|--------------------------------------------------
+*/
+
+// let sizes = {
+//   width: 5, 
+//   height: 10
+// },
+
+// getSquare = function () {
+//   return this.width * this.height
+// };
+
+// console.log(getSquare.call(sizes)); // 50
+// console.log(getSquare.apply(sizes)); // 50
+
+
+/**
+|--------------------------------------------------
+  === <<<---  TASK this.bind --->>>  ===
+let element = {
+    height: 25,
+    getHeight: function () {return this.height;}
+};
+
+let getElementHeight = element.getHeight;
+getElementHeight(); // undefined
+
+Измените функцию getElementHeight таким образом, чтобы можно
+было вызвать getElementHeight() и получить 25.
+|--------------------------------------------------
+*/
+
+// let element = {
+//   height: 25,
+//   getHeight: function () {
+//     return this.height;
+//   }
+// };
+
+// let getElementHeight = element.getHeight.bind(element);
+// console.log(getElementHeight()); // 25
+
+
+/**
+|--------------------------------------------------
+  === <<<---  TASK  --->>>  ===
+
+|--------------------------------------------------
+*/
+
+
+
+/**
+|--------------------------------------------------
+  === <<<---  TASK  --->>>  ===
+
+|--------------------------------------------------
+*/
+
+
+
+/**
+|--------------------------------------------------
+  === <<<---  TASK  --->>>  ===
+
+|--------------------------------------------------
+*/
