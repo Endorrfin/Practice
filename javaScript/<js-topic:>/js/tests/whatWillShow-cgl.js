@@ -12,6 +12,11 @@
 // console.log('5' - 3); // 2
 // console.log('5' + 3); // '53'
 // console.log('5' - '4'); // 1
+// console.log(3 + 2 - '1'); // 4
+// console.log('3' + 2 - 1); // 31
+// console.log(+'10' + 1); // 11
+// console.log(null + 5); // 5
+// console.log(true + undefined); // Nan
 // console.log('5' + +'5'); // 55
 // console.log(5 + +'5'); // 10
 // console.log('foo' + 'foo'); // foofoo

@@ -149,20 +149,54 @@ reduce - чтоб найти максимальное число в массив
 /**
 |--------------------------------------------------
   === <<<---  TASK #7 --->>>  ===
-
+На основе строки “i am a frontend development” сделать новую строку где первые буквы каждого слова 
+будут в верхнем регистре. Использовать for или while.
 |--------------------------------------------------
 */
+
+// const str = "i am a frontend development" // output I Am A Frontend Development
+// let newStr = '';
+
+// for (let i = 0; i < str.length; i++) {
+//   console.log(str[i]);
+//   if (str[i - 1] === " " || i === 0) {
+//     newStr += str[i].toUpperCase();
+//   } else {
+//     newStr += str[i];
+//   }
+// }
+// console.log(newStr); // I Am A Frontend Development
 
 
 
 /**
 |--------------------------------------------------
   === <<<---  TASK #8 --->>>  ===
+Дан объект:
+let list = {
+     name: ‘denis’,
+     work: ‘easycode’,
+     age: 29
+}
 
+Перебрать объект и если значение в свойстве это строка то переписать ее всю в верхнем регистре.
+Использовать for in.
 |--------------------------------------------------
 */
 
+// let list = {
+//   name: 'denis',
+//   work: 'easycode',
+//   age: 29
+// }
 
+// for (let key in list) {
+//   if (typeof list[key] === 'string') {
+//     list[key] = list[key].toUpperCase();
+//   }
+// }
+
+// console.log(list);
 
 /**
 |--------------------------------------------------
