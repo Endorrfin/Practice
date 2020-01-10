@@ -356,10 +356,30 @@ Callback  должен принимать один элемент массива
 /**
 |--------------------------------------------------
   === <<<---  TASK #14 --->>>  ===
-
+Cоздать массив длинной в заданное число?
 |--------------------------------------------------
 */
 
+// OPTION I
+// const generateList = number => {
+//   let numberArray = [];
+//   for (let index = 1; index <= number; index++) {
+//     numberArray.push(index);
+//   }
+//   return numberArray;
+// };
+// console.log(generateList);
+
+
+// OPTION II
+// const generateArray = (num) => {
+//   return Array.from(Array(num).keys()).map(item => item + 1)
+// };
+
+
+// OPTION III
+// const generateArray6 = (num) => 
+//  [...new Array(num)].map((item, index) => index + 1);
 
 
 /**
