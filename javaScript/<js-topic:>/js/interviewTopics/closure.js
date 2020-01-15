@@ -355,36 +355,52 @@ multiply(10); // 120 (12 * 10)
 */
 
 // OPTION I
-function getFullName (firstName, lastName) {
-  console.log(firstName, lastName);
-  return function () {
-    return `${firstName}, ${lastName}`;
-  };
-}
+// function getFullName (firstName, lastName) {
+//   console.log(firstName, lastName);
+//   return function () {
+//     return `${firstName}, ${lastName}`;
+//   };
+// }
 
-const getName = getFullName('Steve', 'Jobs');
+// const getName = getFullName('Steve', 'Jobs');
 // console.log(getName); // str function
 // console.log(getName('Larry', 'King')); // Steve Jobs
 
 
 
 // OPTION II
-function updateValue (value = 0) {
-  let x = value;
-  return function (number = 0) {
-    return (x += number);
-  };
-}
+// function updateValue (value = 0) {
+//   let x = value;
+//   return function (number = 0) {
+//     return (x += number);
+//   };
+// }
 
-const updateData = updateValue(2);
-const updateInformation = updateValue(3);
-console.log(updateData(1)); // 3
-console.log(updateInformation(1)); // 4
-console.log(updateData(2)); // 5
-console.log(updateInformation(3)); // 7
+// const updateData = updateValue(2);
+// const updateInformation = updateValue(3);
+// console.log(updateData(1)); // 3
+// console.log(updateInformation(1)); // 4
+// console.log(updateData(2)); // 5
+// console.log(updateInformation(3)); // 7
 
 
 
+
+// OPTION III
+
+// function checkCredit () {
+//   const login = someLogin;
+//   const password = somePassword;
+
+//   return {
+//     checkLogin(value) {
+//       return login === value;
+//     },
+//     checkPassword(value) {
+//       return password === value;
+//     },
+//   };
+// }
 
 
 /**
