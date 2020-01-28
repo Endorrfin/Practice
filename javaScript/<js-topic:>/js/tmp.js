@@ -289,3 +289,6 @@
 // Promise.all([prom1, prom2, prom3])
 // .then(data => console.log(data))
 // .catch(error => console.log(error));
+
+
+console.log('Hi');

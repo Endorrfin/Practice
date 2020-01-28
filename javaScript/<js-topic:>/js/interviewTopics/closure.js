@@ -20,37 +20,40 @@
 
 // // === <<<--- EXAMPLE I --->>>  ===
 
-// function makeGreeting () {
-//   var myName = "Alex";
+function makeGreeting () {
+  var myName = "Alex";
 
-//   function greeting(personName) {
-//     return "Hello, " + personName + "! My name's " + myName + ".";
-//   };
+  function greeting(personName) {
+    return "Hello, " + personName + "! My name's " + myName + ".";
+  };
 
-//   return greeting;
-// }
+  return greeting;
+}
 
-// // Сохраняем созданное замыкание в переменную.
-// var newGreeting = makeGreeting();
+// Сохраняем созданное замыкание в переменную.
+var newGreeting = makeGreeting();
+
 
 // /* 
 // вызываем функцию greeting из замыкания, передавая туда необходимые параметры.
 // Ключевым моментом является то, что функция makeGreeting уже отработала, и фактически переменной myName уже не существует, но благодаря тому, что мы создали замыкание (упомянули) эту переменную в какой-то из вложенных функций, ее значение сохранилось.
-// Фактически, в переменной newGreeting содержитья не только ссылка на саму функцию greeting, но и некий словарь, содержащий значение всех переменных объявленных на момент их создания. Это позволяет нам при вызове функции newGreeting использовать значение не сущетствующей уже переменной myName при построении строки вывода.
+// Фактически, в переменной newGreeting содержитья не только ссылка на саму функцию greeting, но и некий словарь, содержащий значение всех переменных объявленных на момент их создания. Это позволяет нам при вызове функции newGreeting использовать значение не существующей уже переменной myName при построении строки вывода.
 // */
+
 // console.log(newGreeting("Bill")); // Hello, Bill! My name's Alex.
 // console.log(newGreeting("Fredorika")); // Hello, Fredorika! My name's Alex.
 // console.log(newGreeting("Skot")); // Hello, Skot! My name's Alex.
 
-// /* 
-// Принципиальная разница между функциями makeGreeting & greeting не только то, что greeting вложенная в makeGreeting, но прежде всего то, что greeting использует переменную, которая не объявлена в этой функции и не является ее параметром - в данном случае переменная myName.
-// Таким образом функция greeting в отличии от makeGreeting будет являтся замыканием.
-// */
+
+/**
+ * Принципиальная разница между функциями makeGreeting & greeting не только то, что greeting вложенная в makeGreeting, но прежде всего то, что greeting использует переменную, которая не объявлена в этой функции и не является ее параметром - в данном случае переменная myName.
+ * Таким образом функция greeting в отличии от makeGreeting будет являтся замыканием.
+ */
 
 
 
 // /* 
-// Самое распространенное применение это, наверное, приватные свойства и методы для классов. В JS нету модификаторов доступа к членам класса, но инкапсуляция кода иногда требуется. Еще замыкание полезно в callback-функциях. Внутри callback-функции мы имеем доступ ко всем переменным содержащей (где callback объявлялся) функции.
+// Самое распространенное применение это, наверное, приватные свойства и методы для классов. В JS нет модификаторов доступа к членам класса, но инкапсуляция кода иногда требуется. Еще замыкание полезно в callback-функциях. Внутри callback-функции мы имеем доступ ко всем переменным содержащей (где callback объявлялся) функции.
 // Самая распространенная ошибка это создание замыканий в цикле, на каждой итерации цикла старое замыкание будет затираться новым. Это одна из причин, почему в JS добавили модификатор let.
 // */
 
@@ -61,26 +64,27 @@
 // *** 2019.11.28 |+|+|+|+|+|+|+|   Closure #8   |+|+|+|+|+|+|+|
 // Замыкание (closure) - это функция и все переменные, которые ей доступны снаружи.
 
-// var messenger = function (firstName, secondName) {
-//   var count = 0;
-//   var greetingMessage = "Welcome " + firstName + " " + secondName + ".Glad to see you ";
+var messenger = function (firstName, secondName) {
+  var count = 0;
+  var greetingMessage = "Welcome " + firstName + " " + secondName + ".Glad to see you ";
 
-//   return {
-//     sayHello : function () {
-//       console.log(greetingMessage + (count++));
-//     },
-//     resetCount : function () {
-//       count = 0;
-//       console.log("Count is 0");
-//     }
-//   }
-// }
+  return {
+    sayHello : function () {
+      console.log(greetingMessage + (count++));
+    },
+    resetCount : function () {
+      count = 0;
+      console.log("Count is 0");
+    }
+  }
+}
 
 // var person1 = messenger("John", "Connor");
 // person1.sayHello();
 // person1.sayHello();
 // person1.sayHello();
 // person1.resetCount();
+// person1.sayHello();
 // person1.sayHello();
 
 
@@ -93,16 +97,16 @@
 
 // ======= <<<--- Closure (замыкание) --->>>  =======
 
-// {
-//   function makeCounter () {
-//     var currentCount = 1;
+{
+  function makeCounter () {
+    var currentCount = 1;
 
-//     return function () {
-//       return currentCount++;
-//     };
-//   }
+    return function () {
+      return currentCount++;
+    };
+  }
 
-//   var counter = makeCounter();
+  var counter = makeCounter();
 
 //   // каждый вызов увеличивает счетчик и возвращает результат
 //   console.log( counter()); // 1
@@ -110,7 +114,7 @@
 //   console.log( counter()); // 3
 //   console.log( counter()); // 4
 //   console.log( counter()); // 5
-// }
+}
 
 
 
