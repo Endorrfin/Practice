@@ -12,6 +12,16 @@
  * this есть в любых фукнциях, кроме стрелок.
  * 
  * Проблема, когда метод объекта передаем как callback, то у нее теряется контекст.
+ * 
+ * 
+ * THIS in arrow functions
+ * Стрелочные функции были созданы для того, чтобы упростить передачу контекста на вложенные уровни. В отличии от обычных функций, контекст стрелки - называется лексический контекст, тоесть это буквально сслыка на то лексическое окружение, в котором функция была создана.
+ * В обычных функциях контекст определяется тем, как вызвана фукнция, а в стрелочных фукнциях this определяется тем местом, где она была создана.
+ * 
+ * 
+ * CALL APPLY & BIND
+ * call & apply - это методы функции, которые позволяют привязать контекст и вызвать фукнцию с этим контекстом здесь и сейчас.
+ * bind - это метод фукнции, который позволяет сохранить фукнцию с каким-то контекстом для ее вызова в будущем.
  */
 
 // EXAMPLE I
@@ -26,15 +36,89 @@
 
 
 // EXAMPLE II
-const product2 = {
+// const product2 = {
+//   label: 'Adidas',
+//   showLabel () {
+//     console.log(this); // {label: "Adidas", showLabel: ƒ}
+//     console.log(this.label); // Adidas
+//   },
+// };
+
+// product2.showLabel();
+
+
+
+// EXAMPLE III
+// const fn = () => {
+//   console.log(this); // window
+// };
+
+// fn();
+
+
+
+// EXAMPLE IV  - call, apply, bind
+const sell = function (product, price) {
+  console.log(`Manager ${this.name} sold ${product} for ${price}`);
+  this.sales += 1;
+}
+
+const mango = {
+  name: 'Mango',
+  sales: 10
+};
+
+const poly = {
+  name: 'Poly',
+  sales: 20
+};
+
+// sell.call(mango, 'TV', 50); // вызываем функцию, привязываем контекст, передаем аргументы в виде списка
+// sell.call(poly, 'CPY', 100); // вызываем функцию, привязываем контекст, передаем аргументы в виде списка
+
+
+// sell.apply(mango, ['Phone', 350]); // вызываем функцию, привязываем контекст, передаем аргументы в виде массива
+// sell.apply(poly, ['Wasch', 400]); // вызываем функцию, привязываем контекст, передаем аргументы в виде массива
+
+
+const polySell = sell.bind(poly, 'Imac', 1800);
+const mangoSell = sell.bind(mango, 'macBook', 1400);
+
+polySell(); // Manager Poly sold Imac for 1800
+mangoSell(); // Manager Mango sold Imac for 1400
+
+
+
+const product = {
   label: 'Adidas',
-  showLabel () {
+  showLabel() {
     console.log(this); // {label: "Adidas", showLabel: ƒ}
     console.log(this.label); // Adidas
+
+    return this.label;
   },
 };
 
-product2.showLabel();
+
+const printLabel = function(callback) {
+  const label = callback();
+
+  console.log(`Product label: ${label}`); // Product label: Adidas
+};
+
+const boundShowLabel = product.showLabel.bind(product);
+
+// boundShowLabel();
+
+printLabel(boundShowLabel);
+
+
+
+
+
+
+
+
 
 
 
