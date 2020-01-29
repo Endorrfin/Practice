@@ -58,20 +58,20 @@
 
 
 // EXAMPLE IV  - call, apply, bind
-const sell = function (product, price) {
-  console.log(`Manager ${this.name} sold ${product} for ${price}`);
-  this.sales += 1;
-}
+// const sell = function (product, price) {
+//   console.log(`Manager ${this.name} sold ${product} for ${price}`);
+//   this.sales += 1;
+// }
 
-const mango = {
-  name: 'Mango',
-  sales: 10
-};
+// const mango = {
+//   name: 'Mango',
+//   sales: 10
+// };
 
-const poly = {
-  name: 'Poly',
-  sales: 20
-};
+// const poly = {
+//   name: 'Poly',
+//   sales: 20
+// };
 
 // sell.call(mango, 'TV', 50); // вызываем функцию, привязываем контекст, передаем аргументы в виде списка
 // sell.call(poly, 'CPY', 100); // вызываем функцию, привязываем контекст, передаем аргументы в виде списка
@@ -81,42 +81,72 @@ const poly = {
 // sell.apply(poly, ['Wasch', 400]); // вызываем функцию, привязываем контекст, передаем аргументы в виде массива
 
 
-const polySell = sell.bind(poly, 'Imac', 1800);
-const mangoSell = sell.bind(mango, 'macBook', 1400);
+// const polySell = sell.bind(poly, 'Imac', 1800);
+// const mangoSell = sell.bind(mango, 'macBook', 1400);
 
-polySell(); // Manager Poly sold Imac for 1800
-mangoSell(); // Manager Mango sold Imac for 1400
-
-
-
-const product = {
-  label: 'Adidas',
-  showLabel() {
-    console.log(this); // {label: "Adidas", showLabel: ƒ}
-    console.log(this.label); // Adidas
-
-    return this.label;
-  },
-};
+// polySell(); // Manager Poly sold Imac for 1800
+// mangoSell(); // Manager Mango sold Imac for 1400
 
 
-const printLabel = function(callback) {
-  const label = callback();
 
-  console.log(`Product label: ${label}`); // Product label: Adidas
-};
+// const product = {
+//   label: 'Adidas',
+//   showLabel() {
+//     console.log(this); // {label: "Adidas", showLabel: ƒ}
+//     console.log(this.label); // Adidas
 
-const boundShowLabel = product.showLabel.bind(product);
-
-// boundShowLabel();
-
-printLabel(boundShowLabel);
+//     return this.label;
+//   },
+// };
 
 
+// const printLabel = function(callback) {
+//   const label = callback();
+
+//   console.log(`Product label: ${label}`); // Product label: Adidas
+// };
+
+// const boundShowLabel = product.showLabel.bind(product);
+
+// // boundShowLabel();
+
+// printLabel(boundShowLabel);
 
 
 
 
+
+// |+|+|+| === MODULE 4.2 ФУНКЦИЯ КОНСТРУКТОР ===  |+|+|+|
+
+/**
+ * функция-конструктор - фабрика по созданию объектов, позволяет динамически создавать объекты.
+ * new - это оператор. Если с помощью new вызваем фукнцию, то она вызвается как функция-конструктор.
+ * Оператор new позволяет создать пустой объект и в контексте этого объекта вызвать эту функцию, чтоб она отработала как конструктор.
+ * 
+ * Manager - это схема
+ * mango & poly - экземпляр
+ */
+
+ const Manager = function (name, sales = 0) {
+   // this = {}
+   this.name = name;
+   this.sales = sales;
+
+   this.sell = function (product, price) {
+    console.log(`Manager ${this.name} sold ${product} for ${price}`);
+    this.sales += 1;
+   };
+
+  //  return this // делает за нас
+ };
+
+ const mango = new Manager ('Mango', 5);
+ console.log(mango); // Manager {name: "Mango", sales: 5}
+ mango.sell('Ipod nano', 170)
+
+ const poly = new Manager ('Poly', 10);
+ console.log(poly); // Manager {name: "Poly", sales: 10}
+ poly.sell('Ipod micro', 192)
 
 
 
