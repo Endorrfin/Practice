@@ -1,4 +1,48 @@
 
+
+
+
+// |+|+|+| === MODULE 4.2 THIS - КОНТЕКСТ ИСПОЛНЕНИЯ ===  |+|+|+|
+
+/**
+ * Во время вызова этого метода, this будет ссылаться на тот объект, который вызвал функцию!
+ * Кто вызвал фукнцию, на тот объект this и ссылается во время ее вызова.
+ * Ключевое слово this получает значение не во время объявления функции, а во время вызова.
+ * this определяется не местом объявления, а местом вызова.
+ * this есть в любых фукнциях, кроме стрелок.
+ * 
+ * Проблема, когда метод объекта передаем как callback, то у нее теряется контекст.
+ */
+
+// EXAMPLE I
+// const product1 = {
+//   label: 'Adidas',
+//   showLabel () {
+//     console.log(product1.label);
+//   },
+// };
+
+// product1.showLabel(); // Adidas
+
+
+// EXAMPLE II
+const product2 = {
+  label: 'Adidas',
+  showLabel () {
+    console.log(this); // {label: "Adidas", showLabel: ƒ}
+    console.log(this.label); // Adidas
+  },
+};
+
+product2.showLabel();
+
+
+
+
+
+
+
+
 // *** 2019.11.28 |+|+|+|+|+|+|+|   Example#1   |+|+|+|+|+|+|+|
 
 // const users = ['Mango', 'Ajax', 'Polu'];
