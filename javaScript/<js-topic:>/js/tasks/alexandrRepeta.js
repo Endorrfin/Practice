@@ -157,17 +157,64 @@
  * 
  * Конструкторы - это много схем, из которых делаются экземпляры. Они абсолютно идентичны по количеству свойств, разные по значениям и независят друг от друга.
  */
+// const Counter = function ({ initialValue = 0, step = 1 }) {
+//   // this {}
+
+//   this.value = initialValue;
+//   this.step = step;
+
+//   this.increment = function() {
+//     this.value += this.step;
+//   };
+
+//   // return this;
+// };
+// console.dir(Counter)
+
+
+// const counterA = new Counter({ initialValue: 10, step: 5 });
+// console.log('counterA.value: ', counterA.value);
+// counterA.increment();
+// console.log('counterA.value: ', counterA.value);
+
+// const counterB = new Counter({ initialValue: 100, step: 15 });
+// console.log('counterB.value: ', counterB.value);
+// counterB.increment();
+// console.log('counterB.value: ', counterB.value);
+// console.log(counterA, counterB);
+
+
+
+// |+|+|+| === MODULE 5.1 General introduction to PROTOTYPE INHERITANCE ===  |+|+|+|
+/**
+ * У каждой абсолютно фукнций, кроме стрелочных есть внутреннее свойство prototype, которое содержит объект и хранит ссылку на сому эту фукнцию.
+ * 
+ * У каждого объекта есть __proto__
+ * 
+ * Часто бывает путаница:
+ * У объектов свойство prototype
+ * У функций свойство prototype
+ * Поэтому, когда говорят об объекте, обычно говорят __proto__
+ * Когда говорят о функции конструкторе, говорят prototype.
+ * [[Prototype]] === __proto__
+ * 
+ * Как работает цепочка прототипов?
+ * Когда вызвается какой-то метод, или идет обращение к свойству на объекте, сначала поиск этого свойства происходит в самом объекте. Если в этом объекте свойства с таким ключем не найдено, то поиск осуществляется в его прототипе, заходит в свойство __proto__ и ищет там. Очень похоже на цепочку областей видимости.
+ */
+
 const Counter = function ({ initialValue = 0, step = 1 }) {
   // this {}
+  // this.__proto__ = Counter.prototype
 
   this.value = initialValue;
   this.step = step;
 
-  this.increment = function() {
-    this.value += this.step;
-  };
-
   // return this;
+};
+console.dir(Counter)
+
+Counter.prototype.increment = function() {
+  this.value += this.step;
 };
 
 
@@ -182,6 +229,7 @@ counterB.increment();
 console.log('counterB.value: ', counterB.value);
 console.log(counterA, counterB);
 
+console.log(counterA, counterB);
 
 
 
