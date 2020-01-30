@@ -127,26 +127,84 @@
  * mango & poly - экземпляр
  */
 
- const Manager = function (name, sales = 0) {
-   // this = {}
-   this.name = name;
-   this.sales = sales;
+//  const Manager = function (name, sales = 0) {
+//    // this = {}
+//    this.name = name;
+//    this.sales = sales;
 
-   this.sell = function (product, price) {
-    console.log(`Manager ${this.name} sold ${product} for ${price}`);
-    this.sales += 1;
-   };
+//    this.sell = function (product, price) {
+//     console.log(`Manager ${this.name} sold ${product} for ${price}`);
+//     this.sales += 1;
+//    };
 
-  //  return this // делает за нас
- };
+//   //  return this // делает за нас
+//  };
 
- const mango = new Manager ('Mango', 5);
- console.log(mango); // Manager {name: "Mango", sales: 5}
- mango.sell('Ipod nano', 170)
+//  const mango = new Manager ('Mango', 5);
+//  console.log(mango); // Manager {name: "Mango", sales: 5}
+//  mango.sell('Ipod nano', 170)
 
- const poly = new Manager ('Poly', 10);
- console.log(poly); // Manager {name: "Poly", sales: 10}
- poly.sell('Ipod micro', 192)
+//  const poly = new Manager ('Poly', 10);
+//  console.log(poly); // Manager {name: "Poly", sales: 10}
+//  poly.sell('Ipod micro', 192)
+
+
+
+// |+|+|+| === MODULE 5.1 ФУНКЦИЯ КОНСТРУКТОР - COUNTER ===  |+|+|+|
+/**
+ * Counter A & CounterB = называется экземпляр. Когда мы что-то сделали по конструктору - это называется экземпляр.
+ * Два абсолютно независимых объекта с одинаковым фукнционалом.
+ * 
+ * Конструкторы - это много схем, из которых делаются экземпляры. Они абсолютно идентичны по количеству свойств, разные по значениям и независят друг от друга.
+ */
+const Counter = function ({ initialValue = 0, step = 1 }) {
+  // this {}
+
+  this.value = initialValue;
+  this.step = step;
+
+  this.increment = function() {
+    this.value += this.step;
+  };
+
+  // return this;
+};
+
+
+const counterA = new Counter({ initialValue: 10, step: 5 });
+console.log('counterA.value: ', counterA.value);
+counterA.increment();
+console.log('counterA.value: ', counterA.value);
+
+const counterB = new Counter({ initialValue: 100, step: 15 });
+console.log('counterB.value: ', counterB.value);
+counterB.increment();
+console.log('counterB.value: ', counterB.value);
+console.log(counterA, counterB);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
