@@ -122,12 +122,12 @@ This is a wrong answer
 */
 // ??????? = undefined
 
-'use strict';
+// 'use strict';
 
-const func = () => {
-  a = 2;
-};
-console.log(window.a); // Error
+// const func = () => {
+//   a = 2;
+// };
+// console.log(window.a); // Error
 
 
 
@@ -165,6 +165,8 @@ This is a wrong answer
 result
 undefined +++
 null
+
+Объяснение: в ES-6 'use strict' идет по умолчанию!
 |--------------------------------------------------
 */
 
@@ -264,14 +266,26 @@ This is a correct answer
 |--------------------------------------------------
   === <<<---  Quiz #14  --->>>  ===
 (Q-5-1) Что покажет console.log ?
-true, [1,2,3,4], "any123"
-This is a wrong answer
-"somefalse", "1,2,31", "any123" +++
-This is a correct answer
-false, [1,2,3,4], "any123"
-This is a wrong answer
-"somefalse", NaN, "any123"
-This is a wrong answer
+
+Все, что приводиться к строке, становиться строкой!
+let a = 1;
+let b = '2';
+let c = 3;
+const d = [];
+const e = {}
+const f = [2, 4, 8]
+const g = {name: 'Ivan', age: 26, marrid: false};
+
+console.log(a + b); // 12
+console.log(b + c); // 23
+console.log(b + d); // 2
+console.log(c + d); // 3
+console.log(b + f); // 22,4,8
+console.log(f + b); // 2,4,82
+console.log(b + g); // 2[object Object]
+console.log(g + b); // [object Object]2
+console.log(c + g); // 3[object Object]
+console.log(g + c); // [object Object]3
 |--------------------------------------------------
 */
 
@@ -280,25 +294,20 @@ This is a wrong answer
 // const c = 'any' + 123;
 
 // console.log(a, b, c); // somefalse 1,2,31 any123
+
+
 /**
 |--------------------------------------------------
   === <<<---  Quiz #15 --->>>  ===
 (Q-5-2) Что покажет console.log ?
 
-"1123", 124, NaN +++
-This is a correct answer
-"1123", NaN, NaN
-This is a wrong answer
-"1123", NaN, 125
-This is a wrong answer
-"1123", 124, 125
-This is a wrong answer
+Если в строке есть что-либо, кроме пробелов ('123ab'), оно не конвертируется в число, а становится NaN
 |--------------------------------------------------
 */
 
 // const a = 1 + '123';
 // const b = 1 + +'123';
-// const c = 2 + +'a23ab';
+// const c = 2 + +'123ab';
 
 // console.log(a, b, c); // 1123 124 NaN
 
@@ -307,14 +316,7 @@ This is a wrong answer
 |--------------------------------------------------
   === <<<---  Quiz #16  --->>>  ===
 (Q-5-3) Что покажет console.log ?
-true, false, true, true
-This is a wrong answer
-true, false, false, false
-This is a wrong answer
-false, true, true, true +++
-This is a correct answer
-true, true, false, true
-This is a wrong answer  
+
 |--------------------------------------------------
 */
 // const a = !!'';
@@ -330,14 +332,7 @@ This is a wrong answer
 |--------------------------------------------------
   === <<<---  Quiz #17  --->>>  ===
 (Q-5-4) Что покажет console.log ?
-0, "false", true, true
-This is a wrong answer
-1, "false", true, true +++
-This is a correct answer
-NaN, "false", true, true
-This is a wrong answer
-NaN, 0, true, true
-This is a wrong answer
+
 |--------------------------------------------------
 */
 
@@ -348,19 +343,11 @@ This is a wrong answer
 
 // console.log(a, b, c, d); // 1 "false" true true
 
-
 /**
 |--------------------------------------------------
   === <<<---  Quiz #18  --->>>  ===
 (Q-5-5) Что покажет console.log ?
-true, true, true, true
-This is a wrong answer
-true, false, true, false
-This is a wrong answer
-false, true, false, true
-This is a wrong answer
-false, false, false, false +++
-This is a correct answer
+
 |--------------------------------------------------
 */
 
@@ -371,20 +358,12 @@ This is a correct answer
 
 // console.log(a, b, c, d); // false false false false
 
-
-
 /**
 |--------------------------------------------------
   === <<<---  Quiz #19  --->>>  ===
 (Q-6-1) Что покажет console.log ?
-'declaration', 'arrow'
-This is a wrong answer
-'declaration', null
-This is a wrong answer
-'declaration', Error +++
-This is a correct answer
-nul, null
-This is a wrong answer
+
+hoisting не свойственен function expression, лишь function declaration
 |--------------------------------------------------
 */
 
@@ -406,14 +385,7 @@ This is a wrong answer
  |--------------------------------------------------
  === <<<---  Quiz #20  --->>>  ===
  (Q-6-2) Что покажет console.log ?
- 'arrow', 'declaration'
-This is a wrong answer
-'declaration', 'arrow' +++
-This is a correct answer
-'declaration', null
-This is a wrong answer
-nul, null
-This is a wrong answer
+
 |--------------------------------------------------
 */
 
@@ -432,14 +404,8 @@ This is a wrong answer
 |--------------------------------------------------
   === <<<---  Quiz #21  --->>>  ===
 (Q-6-3) Что покажет console.log ?
-0
-This is a wrong answer
-1
-This is a wrong answer
-2 +++
-This is a correct answer
-3
-This is a wrong answer
+
+clickCount = 0 = потому что это функция на момент создания, которая еще не запущена.
 |--------------------------------------------------
 */
 
@@ -454,8 +420,8 @@ This is a wrong answer
 
 // const clicker1 = createClicker();
 
-// clicker1.increase();
-// clicker1.increase();
+// clicker1.increase(); // 0+1
+// clicker1.increase(); // 1+1
 
 // console.log( clicker1.get() ); // 2
 
@@ -463,14 +429,7 @@ This is a wrong answer
 |--------------------------------------------------
   === <<<---  Quiz #22  --->>>  ===
   (Q-6-4) Что покажет console.log ?
-2,1 +++
-This is a correct answer
-3,3
-This is a wrong answer
-1,1
-This is a wrong answer
-2,null
-This is a wrong answer
+
 |--------------------------------------------------
 */
 
@@ -486,28 +445,19 @@ This is a wrong answer
 // const clicker1 = createClicker();
 // const clicker2 = createClicker();
 
-// clicker1.increase();
-// clicker1.increase();
+// clicker1.increase(); // 0 + 1
+// clicker1.increase(); // 1 + 1
 
-// clicker2.increase();
+// clicker2.increase(); // 0 + 1
 
 // console.log( clicker1.get(), clicker2.get()); // 2, 1
-
-
-
 
 /**
 |--------------------------------------------------
   === <<<---  Quiz #23  --->>>  ===
   (Q-6-5) Что покажет console.log ?
-2,1
-This is a wrong answer
-3,3 +++
-This is a correct answer
-1,1
-This is a wrong answer
-2,null
-This is a wrong answer
+
+  Все кликеры работают с одной переменной!
 |--------------------------------------------------
 */
 
