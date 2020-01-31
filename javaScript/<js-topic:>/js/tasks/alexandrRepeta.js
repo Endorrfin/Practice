@@ -202,34 +202,34 @@
  * Когда вызвается какой-то метод, или идет обращение к свойству на объекте, сначала поиск этого свойства происходит в самом объекте. Если в этом объекте свойства с таким ключем не найдено, то поиск осуществляется в его прототипе, заходит в свойство __proto__ и ищет там. Очень похоже на цепочку областей видимости.
  */
 
-const Counter = function ({ initialValue = 0, step = 1 }) {
-  // this {}
-  // this.__proto__ = Counter.prototype
+// const Counter = function ({ initialValue = 0, step = 1 }) {
+//   // this {}
+//   // this.__proto__ = Counter.prototype
 
-  this.value = initialValue;
-  this.step = step;
+//   this.value = initialValue;
+//   this.step = step;
 
-  // return this;
-};
-console.dir(Counter)
+//   // return this;
+// };
+// console.dir(Counter)
 
-Counter.prototype.increment = function() {
-  this.value += this.step;
-};
+// Counter.prototype.increment = function() {
+//   this.value += this.step;
+// };
 
 
-const counterA = new Counter({ initialValue: 10, step: 5 });
-console.log('counterA.value: ', counterA.value);
-counterA.increment();
-console.log('counterA.value: ', counterA.value);
+// const counterA = new Counter({ initialValue: 10, step: 5 });
+// console.log('counterA.value: ', counterA.value);
+// counterA.increment();
+// console.log('counterA.value: ', counterA.value);
 
-const counterB = new Counter({ initialValue: 100, step: 15 });
-console.log('counterB.value: ', counterB.value);
-counterB.increment();
-console.log('counterB.value: ', counterB.value);
-console.log(counterA, counterB);
+// const counterB = new Counter({ initialValue: 100, step: 15 });
+// console.log('counterB.value: ', counterB.value);
+// counterB.increment();
+// console.log('counterB.value: ', counterB.value);
+// console.log(counterA, counterB);
 
-console.log(counterA, counterB);
+// console.log(counterA, counterB);
 
 
 

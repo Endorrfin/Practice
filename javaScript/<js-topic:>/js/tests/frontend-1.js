@@ -7,7 +7,7 @@
 (Q1-1) Что лишнее про Javascript
 Интерпретируемый
 Мультипародигменный
-Строготипизированый +++
+Строготипизированый +++ 
 Однопоточный
 |--------------------------------------------------
 */
@@ -79,7 +79,7 @@
 // const user = { name: "Bill" };
 // const func = user => {
 //   const currentUser = user || { name: "Bob"};
-//   const userName = user && user.name;
+//   const userName = user && user.name; // user = undefined, user.name даже не возьмется!
 //   console.log(currentUser.name, userName); // Bob undefined
 // };
 
@@ -90,6 +90,11 @@
   === <<<---  Quiz #7  --->>>  ===
 
 (Q-2-3) Что покажет console.log?
+
+|| - оператор ищет true и возвращает 1-й найденный true, если не нашел, то последний false
+&& - оператор ищет false и возвращает 1-й найденный fasle, если не нашел, то последний не false
+const e = {} && 1 && 2 && 3 && {} && true && 19
+console.log(e);
 |--------------------------------------------------
 */
 
@@ -104,6 +109,7 @@
 |--------------------------------------------------
   === <<<---  Quiz #8  --->>>  ===
 (Q-3-1) Что покажет console.log ?
+
  window
 This is a wrong answer
 Error +++
@@ -116,12 +122,12 @@ This is a wrong answer
 */
 // ??????? = undefined
 
-// 'use strict';
+'use strict';
 
-// const func = () => {
-//   a = 2;
-// };
-// console.log(window.a); // Error
+const func = () => {
+  a = 2;
+};
+console.log(window.a); // Error
 
 
 
