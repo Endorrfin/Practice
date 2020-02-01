@@ -512,6 +512,41 @@ clickCount = 0 = потому что это функция на момент с�
 
 
 
+// === <<<--- What will show console.log? -  --->>>  ===
+// console.log('10'+20+30); // 102030
+// console.log(10+20+'30'); // 3030
+
+
+
+// === <<<--- What will show console.log? -  --->>>  ===
+// const a = {
+//   field1: '1',
+//   field2: 2
+// };
+
+// const b = a;
+// const c = b;
+
+// c.field2 = 222;
+// b.field1 = '123';
+
+// console.log(a === b); // true
+// console.log(a === c); // true
+
+// console.log(a.field1); // 123
+// console.log(a.field2); // 222
+
+
+
+// === <<<--- What will show console.log? -  --->>>  ===
+// var a = 1;
+// function f() {
+//   console.log(a); // Cannot access 'a' before initialization
+//   let a = 2;
+// }
+// f();
+
+
 
 
 
