@@ -147,3 +147,45 @@
 //     delay(500),
 //     delay(2000)
 // ]).then(data => console.log(data))
+
+
+console.log('hi');
+console.log('world');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

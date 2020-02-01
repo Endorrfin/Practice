@@ -29,12 +29,14 @@ Object
 // console.log(typeof Infinity); // number
 // console.log(typeof (11 / 0)); // number
 
+
 // console.log(' -- * STRING * -- ');
 // console.log(typeof 'Hello world'); // string
 // console.log(typeof "Hello world"); // string
 // console.log(typeof `Hello world`); // string
 // console.log(typeof "24"); // string
 // console.log(typeof '24'); // string
+
 
 // console.log(' -- * BOOLEAN * -- ');
 // console.log(typeof true); // boolean
@@ -45,15 +47,23 @@ Object
 // console.log(0 == undefined); // false
 // console.log(0 <= null); // true
 // console.log(0 >= null); // true
+// console.log(null == null); // true
+// console.log(null === null); // true
+// console.log(null == undefined); // true
+// console.log(null == undefined); // false
+// console.log(undefined === null); // true
 // console.log(8 <= 10); // true
+
 
 // // null - это указатель, что некое значение отсутствует, или оно не известно.
 // console.log(' -- * NULL * -- ');
 // console.log(typeof null); // object - особенность языка JS (внутренняя ошибка)
 
+
 // console.log(' -- * UNDEFINED * -- ');
 // // undefined - значение переменной не установлено, переменная ничему не равна, или ей ничего не задано
 // console.log(typeof undefined); // undefined
+
 
 // // symbol - используется для задания уникальных идентификаторов для свойств объектов
 // console.log(' -- * SYMBOL * -- ');
@@ -66,12 +76,13 @@ Object
 // person["first_name"] === "John";
 // person[last_name] === "Average";
 
+
 // // ССЫЛОЧНЫЕ ТИПЫ ДАННЫХ
 // console.log(' -- * OBJECT * -- ');
 // console.log(typeof {}); // object
 // console.log(typeof []); // object
 // console.log(typeof function(){}); // function (разновидность объекта)
-// console.log(typeof [1, 'one', 2, 'two']); // object
+// console.log(typeof ['false', 1, 'one', 2, 'two', 'true']); // object
 
 
 
@@ -84,14 +95,16 @@ js нет строгой типизации. Это означает, что в 
 
 значение	в Number	в String	в Boolean
 false	    0	        «false»	  false
-true	    1	        «true»	  true
 0	        0	        «0»	      false
+null	    0	        «null»	  false
+NaN	      NaN	      «NaN»	    false
+«»	      0	        «»	      false
+undefined	NaN	      «undefined»	false
+true	    1	        «true»	  true
 1	        1	        «1»	      true
 «0»	      0	        «0»	      true
 «1»	      1	        «1»	      true
-NaN	      NaN	      «NaN»	    false
 Infinity	Infinity	«Infinity» true
-«»	      0	        «»	      false
 «17»	    17	      «17»	    true
 «test»	  NaN	      «test»	  true
 [ ]	      0	        «»	      true
@@ -101,10 +114,8 @@ Infinity	Infinity	«Infinity» true
 { }	      NaN	      «[object Object]»	    true
 { key: «test» }	    NaN	    «[object Object]»	    true
 function(){}	  NaN	    «function(){}»	     true
-null	    0	        «null»	  false
-undefined	NaN	      «undefined»	false
-
  */
+
 
 
 // |+|+|+| === SECTION #2 ===  |+|+|+|
@@ -116,6 +127,7 @@ undefined	NaN	      «undefined»	false
 // var b = String(true); // "true"
 // var c = String(null); // "null"
 // var d = String(undefined);// "undefined"
+
 
 /* 
 Преобразование к строке: С помощью метода toString(), только для Number и Boolean:
@@ -183,6 +195,7 @@ undefined	NaN	      «undefined»	false
 // parseInt("1234", 10) // 1234
 // parseInt("a1234", 10) // NaN
 
+
 /* 
 Преобразование к числу: Автоматически: при математических операциях (кроме случая сложения со строкой и строгое равенство ===, !==)
 */
@@ -192,7 +205,7 @@ undefined	NaN	      «undefined»	false
 // "2" * 5 // 10
 // true > 0 // true (true преобразуется к 1)
 // true * 5 // 5
-// false * 5 // 0 (false преобразуется к 0)// обратите внимание
+// false * 5 // 0 (false преобразуется к 0)
 // "2" + 5 // "25"
 // "2" === 2 // false (разные типы данных)// undefined приводится к NaN
 // undefined > 0 // false
@@ -254,6 +267,8 @@ Null стоит рассмотреть отдельно. При операция
 // Boolean(5) // true
 // Boolean(null) // false
 // Boolean(undefined) // false
+// Boolean(NaN) // false
+// Boolean(Infinity) // true
 
 
 
