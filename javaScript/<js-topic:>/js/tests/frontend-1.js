@@ -494,3 +494,29 @@ clickCount = 0 = потому что это функция на момент с�
 
 // console.log(a); // {a: 10}
 
+
+
+
+// === <<<--- What will show console.log? -  --->>>  ===
+// console.log(1);
+
+// setTimeout(function timeout() {
+//     console.log(2);
+// }, 0);
+
+// Promise.resolve().then(function(){
+//     console.log(3); // event loop забрасывает в call stack из tasks queue в 1-ю очередь микро задачи.
+// });
+
+// console.log(4);
+
+
+
+
+
+
+
+
+
+
+
