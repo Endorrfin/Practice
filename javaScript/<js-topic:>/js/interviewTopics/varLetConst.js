@@ -1,4 +1,5 @@
 // source: https://dev.to/ahmetkapusuz/what-is-the-temporal-dead-zone-in-javascript-3hlc
+// https://stackoverflow.com/questions/31219420/are-variables-declared-with-let-or-const-not-hoisted-in-es6/31222689#31222689
 
 // === EXAMPLE 01.
 // var foo = 'foo';
@@ -25,12 +26,12 @@
 
 
 // === EXAMPLE 05. 
-let foo = 'first';
-function example() {
-  console.log(foo); // ReferenceError
-  let foo = 'second';
-}
-example();
+// let foo = 'first';
+// function example() {
+//   console.log(foo); // ReferenceError
+//   let foo = 'second';
+// }
+// example();
 
 
 
