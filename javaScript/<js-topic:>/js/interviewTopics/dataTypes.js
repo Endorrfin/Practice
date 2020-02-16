@@ -11,22 +11,26 @@ Boolean
 null
 undefined
 symbol
-II - ссылочные типы данных - передаютс по ссылке
+bigInt
+II - ссылочные типы данных - передаются по ссылке
 Object
 |--------------------------------------------------
 */
 
-// // ПРИМИТИВНЫЕ ТИПЫ ДАННЫХ
+// // ===|=== ПРИМИТИВНЫЕ ТИПЫ ДАННЫХ
 // console.log(' -- * NUMBER * -- ');
 // console.log(typeof 123); // number
 // console.log(typeof 5.4); // number
+
 // // NaN - образуется при попытке что-то, что не является числом привести к числу
 // console.log(typeof NaN); // number
 // console.log(typeof (20 * 'hi')); // number
 // console.log('is12' * 2); // NaN
 // console.log('4a' * 2); // NaN
+
 // // Infinity - результат деления на ноль (- Infinity & - 0)
 // console.log(typeof Infinity); // number
+// console.log(typeof (11 / 0)); // number
 // console.log(typeof (11 / 0)); // number
 
 
@@ -77,7 +81,22 @@ Object
 // person[last_name] === "Average";
 
 
-// // ССЫЛОЧНЫЕ ТИПЫ ДАННЫХ
+
+// // BigInt
+// console.log(typeof 0n); // bigint
+// console.log(typeof 1n === 'bigint'); // true
+// console.log(typeof BigInt('1') === 'bigint'); // true
+// console.log(0n == 0); // true
+// console.log(0n === 0); // false
+
+
+
+
+
+
+
+
+// ===|=== ССЫЛОЧНЫЕ ТИПЫ ДАННЫХ
 // console.log(' -- * OBJECT * -- ');
 // console.log(typeof {}); // object
 // console.log(typeof []); // object
@@ -338,4 +357,29 @@ NaN
 
 // var statusCode = 115;
 // if (statusCode != 0 && statusCode == 115) { console.log("True"); } else { console.log("False"); } // True
+
+
+
+// EXAMPLES
+// console.log(true + false); // 1
+// console.log(12 / "6"); // 2
+// console.log("number" + 15 + 3); // number153
+// console.log(15 + 3 + "number"); // 18number
+// console.log([1] > null); // true
+// console.log("foo" + + "bar"); // fooNaN
+// console.log('true' == true); // false
+// console.log(false == 'false'); // false
+// console.log(null == ''); false
+// console.log(!!"false" == !!"true"); // true
+// console.log(!!false == !!true); // false
+// console.log(['x'] == 'x'); // true
+// console.log([] + null + 1); // null1
+// console.log([1,2,3] == [1,2,3]); // false
+// console.log({}+[]+{}+[1]); // [object Object][object Object]1
+// console.log(!+[]+[]+![]); // truefalse
+// console.log(new Date(0) - 0); // 0
+// console.log(new Date(0) + 0); // GMT+0300 (Eastern European Standard Time)0
+
+
+
 
