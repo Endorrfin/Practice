@@ -27,11 +27,16 @@ Object
 // console.log(typeof (20 * 'hi')); // number
 // console.log('is12' * 2); // NaN
 // console.log('4a' * 2); // NaN
+// console.log(0.5 + 0.1); // 0.6
+// console.log(0.5 + 0.1 == 0.6); // true
+// console.log(0.1 + 0.2 == 0.3); // false
 
 // // Infinity - результат деления на ноль (- Infinity & - 0)
 // console.log(typeof Infinity); // number
 // console.log(typeof (11 / 0)); // number
 // console.log(typeof (11 / 0)); // number
+// console.log(Math.max()); // -Infinity
+// console.log(Math.min()); // Infinity
 
 
 // console.log(' -- * STRING * -- ');
@@ -57,6 +62,8 @@ Object
 // console.log(null == undefined); // false
 // console.log(undefined === null); // true
 // console.log(8 <= 10); // true
+// console.log(true + true + true === 3); // true
+// console.log(true - true === 0); // true
 
 
 // // null - это указатель, что некое значение отсутствует, или оно не известно.
@@ -102,12 +109,16 @@ Object
 // console.log(typeof []); // object
 // console.log(typeof function(){}); // function (разновидность объекта)
 // console.log(typeof ['false', 1, 'one', 2, 'two', 'true']); // object
+// console.log([] + []); // ""
+// console.log([] + {}); // [object Object]
+// console.log({} + []); // [object Object]
+// console.log((!+[] + [] + ![]).length); // 9
+// console.log([] == 0); // true
 
 
 
 
 // |+|+|+| === SECTION #1 ===  |+|+|+|
-
 /* 
 ПРЕОБРАЗОВАНИЕ ТИПОВ ДАННЫХ В JAVASCRIPT
 js нет строгой типизации. Это означает, что в определенных случаях, данные одного типа могут быть преобразованы в другой тип автоматически.
