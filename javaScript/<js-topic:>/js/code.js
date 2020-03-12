@@ -152,6 +152,29 @@
 
 
 
+// ============ Змыкание счетчик ============
+
+// function makeCounter() {
+//   var currentCount = 0;
+
+//   return function() {
+//     return currentCount++;
+//   }
+// }
+
+// var counter = makeCounter();
+// console.log(counter());
+// console.log(counter());
+// console.log(counter());
+
+
+// var counter2 = makeCounter();
+// console.log(counter2());
+// console.log(counter2());
+// console.log(counter2());
+
+
+
 
 
 
