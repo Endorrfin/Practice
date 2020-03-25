@@ -422,33 +422,33 @@ multiply(10); // 120 (12 * 10)
 |--------------------------------------------------
 */
 
-function saveBoxOfToys() {
-  var toysIntoBox = ['Кошка', 'Собачка', 'Лев', 'Слон','Панда','Орел'];
+// function saveBoxOfToys() {
+//   var toysIntoBox = ['Кошка', 'Собачка', 'Лев', 'Слон','Панда','Орел'];
 
-  function getToy() {
-    var max = toysIntoBox.length;
-    var min = 0;
-    var randomToy = Math.floor(Math.random() * (max - min) + min);
-    var toyName = toysIntoBox.splice(randomToy, 1);
+//   function getToy() {
+//     var max = toysIntoBox.length;
+//     var min = 0;
+//     var randomToy = Math.floor(Math.random() * (max - min) + min);
+//     var toyName = toysIntoBox.splice(randomToy, 1);
     
-    if(toyName == 0) {
-      return 'хмык, хмык'
-    } else {
-      return toyName;
-    }
-  }
+//     if(toyName == 0) {
+//       return 'хмык, хмык'
+//     } else {
+//       return toyName;
+//     }
+//   }
 
-  return getToy;
-}
+//   return getToy;
+// }
 
-var saveToys = saveBoxOfToys();
-console.log(saveToys());
-console.log(saveToys());
-console.log(saveToys());
-console.log(saveToys());
-console.log(saveToys());
-console.log(saveToys());
-console.log(saveToys());
+// var saveToys = saveBoxOfToys();
+// console.log(saveToys());
+// console.log(saveToys());
+// console.log(saveToys());
+// console.log(saveToys());
+// console.log(saveToys());
+// console.log(saveToys());
+// console.log(saveToys());
 
 
 
@@ -467,7 +467,33 @@ console.log(saveToys());
 Написать код с помощью функций и замыкания?
 |--------------------------------------------------
 */
+// function saveBoxOfToys() {
+//   var toysIntoBox = ['Кошка', 'Собачка', 'Лев', 'Слон','Панда','Орел'];
 
+//   function getToy() {
+//     var max = toysIntoBox.length;
+//     var min = 0;
+//     var randomToy = Math.floor(Math.random() * (max - min) + min);
+//     var toyName = toysIntoBox.splice(randomToy, 1);
+    
+//     if(toyName == 0) {
+//       return 'хмык, хмык'
+//     } else {
+//       return toyName;
+//     }
+//   }
+
+//   return getToy;
+// }
+
+// var saveToys = saveBoxOfToys();
+// console.log(saveToys());
+// console.log(saveToys());
+// console.log(saveToys());
+// console.log(saveToys());
+// console.log(saveToys());
+// console.log(saveToys());
+// console.log(saveToys());
 
 
 /**
