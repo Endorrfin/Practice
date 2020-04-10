@@ -183,8 +183,13 @@
 * Promise - может в себе хранить 3 состояния и может хранить в себе неограниченное к-во значений, привязанных к этому промису.
 * Понятия, как частично выполненное обещание в JS нет.
 * Обещание из неопределенного состояния (pending) переводится всего лишь 1 раз либо reject либо fulfilled
-* [[PromiseStatus]] - состояние статуса: pending || resolved || rejected
-* [[PromiseValue]] - результат обещания, конкретная информация
+* [[PromiseStatus]] - Cостояние статуса Promise бывает одним из: pending || fulfilled || rejected
+* [[PromiseResult]] - Результат Promise - будет лежать результат // в Chrome [[PromiseValue]]
+* [[PromiseFulfilledReactions]] - Реакции на Promise в состоянии удачи ([] складирует последствия выполненных обещаний)
+* [[PromiseRejectReactions]] - Реакции на Promise в состоянии неудачи ([] складирует последствия выполненных обещаний)
+* .promise.then() - вызывается через точку, значит then - это метод promise
+* then - последствие выполненного обещания.
+* Когда у нас Promise в состоянии pending, PromiseResult равен ничему.
 * Важно не столько Promise - обещание, как его результат.
 * Функции resolve & reject - это 2 механизма, чтобы перевести promise в состояние отличное от pending
 * */
@@ -249,20 +254,32 @@
 
 
 // 5. Promise example
-const promise4 = new Promise(function (resolve, reject) {
-    var setOfNumbers = alert('Выберите одно число из \n 3, 4, 5');
-    var num = +prompt('загадайте число из приведенных');
-    console.log("I'm thinking...");
+// var arr = [6, 7, 8];
 
-    setTimeout(function (){
-        if (num == randomInteger(5, 10))
-        },2000)
-})
+// function randomInteger(min, max) {
+//     var rand = min - 0.5 + Math.random() * (max - min + 1)
+//     rand = Math.round(rand);
+//     return rand;
+// }
 
+// const promise4 = new Promise(function (resolve, reject) {
+//     var num = +prompt(`загадайте число из приведенных${arr}`);
+//     console.log("I'm thinking...");
 
-function randomInteger(min, max) {
-var ranв = min - 0.5 + Math.random() * (max - min + 1)
-}
+//     setTimeout(function (){
+//         var randomNumber = arr[randomInteger(0, 2)];
+//         if (num == randomNumber){
+//             console.log('Cool');
+//             resolve('Cool')
+//         } else {
+//             console.log('Ops;' + randomNumber);
+//             reject ('Ops')
+//         }
+//     },2000);
+// });
+
+// console.log(promise4);
+
 
 
 
