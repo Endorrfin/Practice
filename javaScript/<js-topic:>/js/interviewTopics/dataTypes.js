@@ -112,8 +112,9 @@ Object
 // console.log([] + []); // ""
 // console.log([] + {}); // [object Object]
 // console.log({} + []); // [object Object]
-// console.log((!+[] + [] + ![]).length); // 9
-// console.log([] == 0); // true
+// console.log((!+[] + [] + ![]).length); // 9 - ПОЧЕМУ
+// console.log([] == 0); // true - ПОЧЕМУ
+// console.log([] === 0); // false
 
 
 
@@ -390,6 +391,8 @@ NaN
 // console.log(!+[]+[]+![]); // truefalse
 // console.log(new Date(0) - 0); // 0
 // console.log(new Date(0) + 0); // GMT+0300 (Eastern European Standard Time)0
+// console.log(+[]); // 0
+// console.log(+undefined); // NaN 
 
 
 

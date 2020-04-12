@@ -72,10 +72,10 @@ var messenger = function (firstName, secondName) {
   var greetingMessage = "Welcome " + firstName + " " + secondName + ".Glad to see you ";
 
   return {
-    sayHello : function () {
+    sayHello: function () {
       console.log(greetingMessage + (count++));
     },
-    resetCount : function () {
+    resetCount: function () {
       count = 0;
       console.log("Count is 0");
     }
@@ -135,7 +135,7 @@ var messenger = function (firstName, secondName) {
 
 //   var b = counter();
 //   var c = counter();
-  
+
 //   // каждый вызов увеличивает счетчик на 1, b и c живут своей жизнью и не пересекаются
 // console.log(b()); // 1
 // console.log(b()); // 2
@@ -413,6 +413,7 @@ multiply(10); // 120 (12 * 10)
 /**
 |--------------------------------------------------
   === <<<---  TASK  --->>>  ===
+  source - https://www.youtube.com/watch?v=E0fzm2BaHiY&list=PLF5GvE7BxzVFnRaev8rNPCs4WB6eSGlHT&index=2
 Стоит коробка с 6 игрушками.
 Есть дети. Детей больше, чем игрушек.
 К коробке походят дети по очереди и забирают по 1 игрушке.
@@ -428,9 +429,10 @@ multiply(10); // 120 (12 * 10)
 //   function getToy() {
 //     var max = toysIntoBox.length;
 //     var min = 0;
-//     var randomToy = Math.floor(Math.random() * (max - min) + min);
-//     var toyName = toysIntoBox.splice(randomToy, 1);
-    
+//     var randomToys = Math.floor(Math.random() * (max - min) + min);
+//     console.log(randomToys)
+//     var toyName = toysIntoBox.splice(randomToys, 1);
+
 //     if(toyName == 0) {
 //       return 'хмык, хмык'
 //     } else {
@@ -442,6 +444,7 @@ multiply(10); // 120 (12 * 10)
 // }
 
 // var saveToys = saveBoxOfToys();
+// console.log(saveToys());
 // console.log(saveToys());
 // console.log(saveToys());
 // console.log(saveToys());
@@ -465,100 +468,119 @@ multiply(10); // 120 (12 * 10)
 
 Появляется дед Мороз и добавляет в ящик игрушки.
 Написать код с помощью функций и замыкания?
-|--------------------------------------------------
-*/
-function saveBoxOfToys() {
-  var toysIntoBox = ['Кошка', 'Собачка', 'Лев', 'Слон','Панда','Орел'];
 
-  function getToy() {
-    var max = toysIntoBox.length;
-    var min = 0;
-    var randomToy = Math.floor(Math.random() * (max - min) + min);
-    var toyName = toysIntoBox.splice(randomToy, 1);
-    
-    if(toyName == 0) {
-      return 'хмык, хмык'
-    } else {
-      return toyName;
-    }
-  }
-
-  return getToy;
-}
-
-var saveToys = saveBoxOfToys();
-console.log(saveToys());
-console.log(saveToys());
-console.log(saveToys());
-console.log(saveToys());
-console.log(saveToys());
-console.log(saveToys());
-console.log(saveToys());
-
-
-/**
-|--------------------------------------------------
-  === <<<---  TASK  --->>>  ===
-
+Подсказки
+Функция не может возвращать 2 return, но нам нужно вернуть 2 вещи.
+Можно return вернуть массив функций.
 |--------------------------------------------------
 */
 
+// function saveBoxOfToys() {
+//   var boxOfToys = ['cat', 'dog', 'leon', 'elephan', 'horse', 'pinguin'];
 
+//   function putToys() {
+//     for (var i = 0; i < arguments.length; i++) {
+//       boxOfToys.push(arguments[i]);
+//     }
+//   }
 
-/**
-|--------------------------------------------------
-  === <<<---  TASK  --->>>  ===
+//   function getToy() {
+//     var max = boxOfToys.length;
+//     var min = 0;
+//     var randomToy = Math.floor(Math.random() * (max - min) + min);
+//     var toyName = boxOfToys[randomToy];
+//     boxOfToys.splice(randomToy, 1);
+//     if (toyName !== undefined) {
+//       return toyName;
+//     } else {
+//       return 'A-a-a-a-a';
+//     }
+//   }
 
-|--------------------------------------------------
-*/
+//   return [getToy, putToys];
+// }
 
+//   var callFunction = saveBoxOfToys();
+//   var callFunctionGetToy = callFunction[0];
+//   var callFunctionPutToys = callFunction[1];
 
+// console.log(callFunctionGetToy());
+// console.log(callFunctionGetToy());
+// console.log(callFunctionGetToy());
+  
+// callFunctionPutToys('moon', 'star');
 
-/**
-|--------------------------------------------------
-  === <<<---  TASK  --->>>  ===
+// console.log(callFunctionGetToy());
+// console.log(callFunctionGetToy());
+// console.log(callFunctionGetToy());
 
-|--------------------------------------------------
-*/
+// console.log(callFunctionGetToy());
+// console.log(callFunctionGetToy());
+// console.log(callFunctionGetToy());
 
-
-
-
-/**
-|--------------------------------------------------
-  === <<<---  TASK  --->>>  ===
-
-|--------------------------------------------------
-*/
-
-
-
-
-/**
-|--------------------------------------------------
-  === <<<---  TASK  --->>>  ===
-
-|--------------------------------------------------
-*/
-
-
-
-/**
-|--------------------------------------------------
-  === <<<---  TASK  --->>>  ===
-
-|--------------------------------------------------
-*/
-
-
-
-/**
-|--------------------------------------------------
-  === <<<---  TASK  --->>>  ===
-
-|--------------------------------------------------
-*/
+  
 
 
 
+  /**
+  |--------------------------------------------------
+    === <<<---  TASK  --->>>  ===
 
+  |--------------------------------------------------
+  */
+
+
+
+  /**
+  |--------------------------------------------------
+    === <<<---  TASK  --->>>  ===
+
+  |--------------------------------------------------
+  */
+
+
+
+  /**
+  |--------------------------------------------------
+    === <<<---  TASK  --->>>  ===
+
+  |--------------------------------------------------
+  */
+
+
+
+
+  /**
+  |--------------------------------------------------
+    === <<<---  TASK  --->>>  ===
+
+  |--------------------------------------------------
+  */
+
+
+
+
+  /**
+  |--------------------------------------------------
+    === <<<---  TASK  --->>>  ===
+
+  |--------------------------------------------------
+  */
+
+
+
+  /**
+  |--------------------------------------------------
+    === <<<---  TASK  --->>>  ===
+
+  |--------------------------------------------------
+  */
+
+
+
+  /**
+  |--------------------------------------------------
+    === <<<---  TASK  --->>>  ===
+
+  |--------------------------------------------------
+  */
